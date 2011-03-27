@@ -1,4 +1,6 @@
+# encoding: UTF-8
+
 source "http://rubygems.org"
 
-# Specify your gem's dependencies in scrabble_rouser.gemspec
+# Gem dependencies are specified in the gemspec
 gemspec
