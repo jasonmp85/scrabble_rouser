@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "scrabble_rouser"
 
   # dependencies
-  s.add_development_dependency "rspec"
+  s.add_development_dependency 'rspec'
 
   # files
   s.files         = `git ls-files`.split("\n")
