@@ -14,7 +14,7 @@ This will install the libraries and documentation for the gem as well as a +scra
 
   scrabble_rouser --dictionary path/to/words.txt 'RCKLTRS' path/to/board.txt
 
-You can type +scrabble_rouser --help+ for additional details.
+You can type <tt>scrabble_rouser --help</tt> for additional details.
 
 == Configuration
 

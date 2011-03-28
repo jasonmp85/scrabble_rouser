@@ -13,10 +13,10 @@ CLOBBER.include 'pkg', 'coverage'
 
 # # rdoc task to produce documentation
 Rake::RDocTask.new do |rd|
-  rd.main          = "README.rdoc"
+  rd.main          = 'README.rdoc'
   rd.inline_source = false
 
-  rd.rdoc_files.include("README.rdoc", "lib/**/*.rb")
+  rd.rdoc_files.include('README.rdoc', 'LICENSE', 'lib/**/*.rb')
 end
 
 # rspec task for tests, the default task

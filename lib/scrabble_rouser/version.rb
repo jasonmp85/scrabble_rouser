@@ -2,5 +2,5 @@
 
 module ScrabbleRouser
   # the version number of this release
-  VERSION = "0.0.1"
+  VERSION = '0.0.1'
 end

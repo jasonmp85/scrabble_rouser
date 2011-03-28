@@ -37,7 +37,7 @@ module ScrabbleRouser
             parser.banner = 'Usage: scrabble_rouser [OPTIONS] RACK BOARDFILE'
 
             parser.separator 'Generate moves for BOARDFILE using letters in RACK.'
-            parser.separator "Example: scrabble_rouser -d words.txt ALNBOTE board.txt"
+            parser.separator 'Example: scrabble_rouser -d words.txt ALNBOTE board.txt'
 
             parser.separator ''
             parser.separator 'Solver options:'
