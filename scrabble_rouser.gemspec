@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
 
   # dependencies
   s.add_development_dependency 'rspec'
+  s.add_development_dependency 'simplecov'
 
   # files
   s.files         = `git ls-files`.split("\n")

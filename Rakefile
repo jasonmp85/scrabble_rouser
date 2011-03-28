@@ -9,7 +9,7 @@ require 'rspec/core/rake_task'
 Bundler::GemHelper.install_tasks
 
 # add bundler's generated files to CLOBBER
-CLOBBER.include 'pkg'
+CLOBBER.include 'pkg', 'coverage'
 
 # # rdoc task to produce documentation
 Rake::RDocTask.new do |rd|
