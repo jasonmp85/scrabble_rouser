@@ -1,0 +1,29 @@
+= ScrabbleRouser
+
+ScrabbleRouser is a Ruby gem and command-line tool for generating optimal moves in Scrabble and Scrabble-like games. It largely exists as a personal amusement and self-improvement project: I have been coding in Ruby for a bit over three months but haven't got a feel for setting up a project on my own. Additionally, this gives me a chance to test out various AI strategies in Scrabble.
+
+I hope to eventually package {Tesseract OCR}[http://code.google.com/p/tesseract-ocr/] as a native gem and add support to +scrabble_rouser+, so keep an eye out for future developments in that space.
+
+== Basic Usage
+
+Install the scrabble_rouser gem to get started:
+
+  gem install scrabble_rouser
+
+This will install the libraries and documentation for the gem as well as a +scrabble_rouser+ binary. Until I get around to writing some examples, you're own your own when it comes to the libraries. Use something like YARD[http://yardoc.org/] to browse my documentation. As far as the binary tool goes, the following command will generate optimal moves using the specified dictionary, rack letters, and board:
+
+  scrabble_rouser --dictionary path/to/words.txt 'RCKLTRS' path/to/board.txt
+
+You can type +scrabble_rouser --help+ for additional details.
+
+== Configuration
+
+Everything is configured via command-line flags. Caching and configuration files are planned for a future release.
+
+== Additional Reading
+
+* {The World's Fastest Scrabble Program}[http://portal.acm.org/citation.cfm?id=42420]
+
+== Copyright
+
+Copyright © 2011 Jason Petersen. See LICENSE for details.
