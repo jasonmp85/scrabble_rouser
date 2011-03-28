@@ -1,4 +1,16 @@
 #!/usr/bin/env ruby
 # encoding: UTF-8
 
-require "scrabble_rouser"
+require 'scrabble_rouser'
+
+require 'scrabble_rouser/cli'
+
+begin
+  ScrabbleRouser::CLI.run
+rescue ScrabbleRouser::RouserError => re
+  warn re.message
+  exit re.status_code
+rescue Interrupt => e
+  warn "\nQuitting…"
+  exit 1
+end
