@@ -14,9 +14,9 @@ module ScrabbleRouser
     class << self
 
       # Begins execution of the ScrabbleRouser CLI
-      def run
+      def run(args)
         begin
-          parse ARGV
+          parse args
         rescue OptionParser::ParseError => pe
           raise InvalidOption, pe.message
         end
@@ -77,7 +77,7 @@ module ScrabbleRouser
             end
           end
 
-          parser.parse!
+          parser.parse! args
         end
     end
   end

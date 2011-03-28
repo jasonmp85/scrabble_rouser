@@ -6,7 +6,7 @@ require 'scrabble_rouser'
 require 'scrabble_rouser/cli'
 
 begin
-  ScrabbleRouser::CLI.run
+  ScrabbleRouser::CLI.run ARGV
 rescue ScrabbleRouser::RouserError => re
   warn re.message
   exit re.status_code
