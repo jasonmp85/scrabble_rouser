@@ -20,6 +20,10 @@ You can type <tt>scrabble_rouser --help</tt> for additional details.
 
 Everything is configured via command-line flags. Caching and configuration files are planned for a future release.
 
+== Examples
+
+For sample board files, check out the examples directory. Everything is pretty straightforward.
+
 == Additional Reading
 
 * {The World's Fastest Scrabble Program}[http://portal.acm.org/citation.cfm?id=42420]
