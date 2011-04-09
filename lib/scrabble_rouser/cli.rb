@@ -13,7 +13,7 @@ module ScrabbleRouser
   class CLI
     class << self
 
-      # Begins execution of the ScrabbleRouser CLI
+      # Begins execution of the ScrabbleRouser CLI.
       def run(args)
         begin
           parse args
@@ -24,7 +24,7 @@ module ScrabbleRouser
 
       private
         # Parses the command-line arguments, returning a
-        # struct upon success
+        # struct upon success.
         def parse(args)
           options = OpenStruct.new
 

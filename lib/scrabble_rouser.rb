@@ -7,7 +7,7 @@ require 'scrabble_rouser/version'
 
 module ScrabbleRouser
 
-  # Base class for errors raised by ScrabbleRouser code
+  # Base class for errors raised by ScrabbleRouser code.
 
   class RouserError < StandardError
 
@@ -20,6 +20,6 @@ module ScrabbleRouser
     end
   end
 
-  # Thrown when command-line options are invalid
+  # Thrown when command-line options are invalid.
   class InvalidOption < RouserError; status_code(2) ; end
 end
