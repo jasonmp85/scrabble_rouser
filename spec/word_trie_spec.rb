@@ -1,6 +1,7 @@
 # encoding: UTF-8
 
 require 'spec_helper'
+require 'benchmark'
 require 'scrabble_rouser/word_trie'
 
 describe ScrabbleRouser::WordTrie do
@@ -88,6 +89,36 @@ describe ScrabbleRouser::WordTrie do
         yielded_words.should have(14).items
 
         words.should include(*yielded_words)
+      end
+    end
+  end
+
+  context 'using the Enhanced North American Benchmark LExicon (ENABLE)' do
+    words = []
+
+    before :all do
+      expect do
+        Zlib::GzipReader.open('examples/dictionaries/enable.gz') do |gz|
+          @trie = ScrabbleRouser::WordTrie.new(SamplingEnumerator.new gz, words, 0.1)
+        end
+      end.to take_less_than(4).seconds
+    end
+
+    describe '#include?' do
+      it 'should run in under one second' do
+        expect { @trie.should include(*words) }.to take_less_than(0.3).seconds
+      end
+    end
+
+    # delegates to provided enumerator, sampling values to an array
+    class SamplingEnumerator
+      def initialize(delegate, array, rate=1.0)
+        @r = Random.new(0)
+        @array, @delegate, @rate = array, delegate, rate
+      end
+
+      def each
+        @delegate.each {|val| @array << val if @r.rand < @rate; yield val }
       end
     end
   end
