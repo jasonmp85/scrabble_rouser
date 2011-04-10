@@ -48,6 +48,24 @@ module ScrabbleRouser
       suffix.empty? && lowest.valid
     end
 
+    # Returns all valid letters which produce words when
+    # inserted between the provided prefix and suffix (the
+    # first and last letters of constraints, respectively).
+    def valid_letters(constraints)
+      prefix, suffix = *constraints
+
+      start, rest = find_lowest_node_for prefix
+
+      if rest.empty?
+        start.children.select do |char, child|
+          leaf, rest = find_lowest_node_for suffix, child
+          rest.empty? && leaf.valid
+        end.keys.map(&:chr)
+      else
+        []
+      end
+    end
+
     private
 
       # Adds a word to this WordTrie. Returns true if the
@@ -68,11 +86,12 @@ module ScrabbleRouser
       # Finds the lowest existing node matching a prefix of
       # word, returning that node along with the unmatched
       # suffix. If the word is valid, the node will say so
-      # and the suffix will be empty.
-      def find_lowest_node_for(word)
+      # and the suffix will be empty. Starts at the root
+      # node unless otherwise specified.
+      def find_lowest_node_for(word, start=@root)
         word = word.downcase.strip
 
-        curr = @root
+        curr = start
         missing = word.bytes.find_index {|c| (curr = curr[c] if curr[c]).nil? } || word.length
 
         [curr, word[missing, word.length]]

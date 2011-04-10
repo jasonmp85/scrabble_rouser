@@ -92,6 +92,39 @@ module ScrabbleRouser
       end
     end
 
+    context 'using a wordlist with many common prefixes and suffixes' do
+      words = %w[cab cad caddy cane cob cod computer nab nib nob norb pad pod]
+      trie = WordTrie.new words
+
+      describe '#valid_letters' do
+        it 'should calculate valid letters after a prefix' do
+          letters = trie.valid_letters(['ca', ''])
+          letters.should have(2).items
+          letters.should include('b', 'd')
+        end
+
+        it 'should calculate valid letters before a suffix' do
+          letters = trie.valid_letters(['', 'od'])
+          letters.should have(2).items
+          letters.should include('c', 'p')
+        end
+
+        it 'should calculate valid letters using both a prefix and suffix' do
+          letters = trie.valid_letters(['n', 'b'])
+          letters.should have(3).items
+          letters.should include('a', 'i', 'o')
+        end
+
+        it 'should work with longer words' do
+          trie.valid_letters(['com', 'uter']).should eq ['p']
+        end
+
+        it 'should return an empty set if nothing matches' do
+          trie.valid_letters(['co', 'e']).should be_empty
+        end
+      end
+    end
+
     context 'using the Enhanced North American Benchmark LExicon (ENABLE)' do
       words = []
 
