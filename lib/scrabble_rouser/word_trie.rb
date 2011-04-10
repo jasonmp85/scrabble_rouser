@@ -10,6 +10,8 @@ module ScrabbleRouser
 
   class WordTrie
 
+    include Enumerable
+
     # The number of unique words in the WordTrie.
     attr_reader :size
 
