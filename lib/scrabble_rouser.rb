@@ -3,7 +3,10 @@
 # This module contains all the relevant classes in the
 # scrabble_rouser gem.
 
+require 'scrabble_rouser/board'
+require 'scrabble_rouser/cli'
 require 'scrabble_rouser/version'
+require 'scrabble_rouser/word_trie'
 
 module ScrabbleRouser
 
