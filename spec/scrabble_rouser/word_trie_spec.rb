@@ -133,12 +133,12 @@ module ScrabbleRouser
           Zlib::GzipReader.open('examples/dictionaries/enable.gz') do |gz|
             @trie = WordTrie.new(SamplingEnumerator.new gz, words, 0.1)
           end
-        end.to take_less_than(4).seconds
+        end.to take_less_than(5).seconds
       end
 
       describe '#include?' do
         it 'should run in under one second' do
-          expect { @trie.should include(*words) }.to take_less_than(0.3).seconds
+          expect { @trie.should include(*words) }.to take_less_than(0.4).seconds
         end
       end
 
