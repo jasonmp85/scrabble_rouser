@@ -25,18 +25,18 @@ ScrabbleRouser expects board files to end in '.scrab'. The file format is pretty
 * Subsequent rows should start and end with <tt>|</tt> and must be the same length as the first row. Every character in the row is interpreted as part of the board state, unless double-spacing is enabled, in which case board tiles may be separated by single spaces.
 
 * Letter multipliers are as follows:
-  * The numeral +2+ denotes a double-letter space
-  * The numeral +3+ denotes a triple-letter space
+  * The numeral <tt>2</tt> denotes a double-letter space
+  * The numeral <tt>3</tt> denotes a triple-letter space
 
 * Word multipliers are as follows:
-  * The character <tt>@</tt> (shift-+2+) denotes a double-word space
-  * The character <tt>#</tt> (shift-+3+) denotes a triple-word space
+  * The character <tt>@</tt> (shift-<tt>2</tt>) denotes a double-word space
+  * The character <tt>#</tt> (shift-<tt>3</tt>) denotes a triple-word space
 
 * An asterisk (<tt>*</tt>) denotes the starting space
 
-* Uppercase letters +A+–+Z+ represent placed tiles
+* Uppercase letters <tt>A</tt>–<tt>Z</tt> represent placed tiles
 
-* Lowercase letters +a+–+z+ represent placed–and–locked-in blank tiles. For instance, if another player had played a blank tile and decided it was going to be an +A+, this would be denoted with an +a+. This is necessary because blank tiles have no value in subsequent plays.
+* Lowercase letters <tt>a</tt>–<tt>z</tt> represent placed–and–locked-in blank tiles. For instance, if another player had played a blank tile and decided it was going to be an +A+, this would be denoted with an +a+. This is necessary because blank tiles have no value in subsequent plays.
 
 There are some sample board files in the examples directory.
 
