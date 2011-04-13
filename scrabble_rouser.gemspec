@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   # dependencies
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'ruby-debug19'
 
   # files
   s.files         = `git ls-files`.split("\n")
