@@ -7,6 +7,7 @@ require 'scrabble_rouser/board'
 require 'scrabble_rouser/cli'
 require 'scrabble_rouser/version'
 require 'scrabble_rouser/word_trie'
+require 'scrabble_rouser/strategies'
 
 module ScrabbleRouser
 
