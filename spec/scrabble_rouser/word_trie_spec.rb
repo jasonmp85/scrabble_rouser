@@ -100,23 +100,23 @@ module ScrabbleRouser
         it 'should calculate valid letters after a prefix' do
           letters = trie.valid_letters(['ca', ''])
           letters.should have(2).items
-          letters.should include('b', 'd')
+          letters.should include(*['b', 'd'].map{|s| s.to_b})
         end
 
         it 'should calculate valid letters before a suffix' do
           letters = trie.valid_letters(['', 'od'])
           letters.should have(2).items
-          letters.should include('c', 'p')
+          letters.should include(*['c', 'p'].map{|s| s.to_b})
         end
 
         it 'should calculate valid letters using both a prefix and suffix' do
           letters = trie.valid_letters(['n', 'b'])
           letters.should have(3).items
-          letters.should include('a', 'i', 'o')
+          letters.should include(*['a', 'i', 'o'].map{|s| s.to_b})
         end
 
         it 'should work with longer words' do
-          trie.valid_letters(['com', 'uter']).should eq ['p']
+          trie.valid_letters(['com', 'uter']).should eq ['p'].map{|s| s.to_b}
         end
 
         it 'should return an empty set if nothing matches' do

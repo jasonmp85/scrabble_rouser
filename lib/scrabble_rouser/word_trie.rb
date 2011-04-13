@@ -60,7 +60,7 @@ module ScrabbleRouser
         start.children.select do |char, child|
           leaf, rest = find_lowest_node_for suffix, child
           rest.empty? && leaf.valid
-        end.keys.map(&:chr)
+        end.keys
       else
         []
       end

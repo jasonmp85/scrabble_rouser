@@ -63,6 +63,33 @@ module ScrabbleRouser
       end
     end
 
+    context 'a simple board' do
+      input = [
+        '+---+',
+        '|DOG|',
+        '|@bE|',
+        '|HIM|',
+        '+---+'
+      ]
+      board = Board.new input
+
+      it 'should return the correct rows' do
+        rows = board.rows
+        rows.should have(3).items
+        rows.should include %w[D O G].map {|c| c.to_b}
+        rows.should include %w[@ b E].map {|c| c.to_b}
+        rows.should include %w[H I M].map {|c| c.to_b}
+      end
+
+      it 'should return the correct columns' do
+        cols = board.cols
+        cols.should have(3).items
+        cols.should include %w[D @ H].map {|c| c.to_b}
+        cols.should include %w[O b I].map {|c| c.to_b}
+        cols.should include %w[G E M].map {|c| c.to_b}
+      end
+    end
+
     context 'a complex board' do
       input = [
         'D-----------------------------D',
