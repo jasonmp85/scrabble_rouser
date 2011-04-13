@@ -28,3 +28,9 @@ RSpec::Matchers.define :take_less_than do |n|
     "expected a runtime under #{n} seconds, but observed #{@elapsed}"
   end
 end
+
+class String
+  def to_b
+    bytes.first
+  end
+end
